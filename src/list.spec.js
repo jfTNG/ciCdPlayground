@@ -15,7 +15,7 @@ describe('list', () => {
     
     const p = getByTestId('singleContentParagraph')
     expect(p).toBeInTheDocument();
-    expect(p).toHaveTextContent('the other line');
+    expect(p).toHaveTextContent('the line');
   })
   
   it('shows content as list if it is an array', () => {
