@@ -11,6 +11,7 @@ Serve at localhost:8081 with `yarn dev`
 
 Run tests with `yarn test` and `yarn test:e2e`
 
+
 ## Provisioning
 In the workshop infrastructure we provision an S3 bucket 'cicd-workshop-playground' 
 and give the Jenkins instance write access to it. 
