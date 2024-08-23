@@ -27,7 +27,7 @@ jobs:
         npm install -g yarn
         yarn install
     - name: Run unit tests
-      run: yarn testß
+      run: yarn test
     - name: Build
       run: yarn build
     - name: E2E tests
