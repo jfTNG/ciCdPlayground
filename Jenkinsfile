@@ -10,6 +10,11 @@ pipeline {
                 sh 'yarn install'
             }
         }
+      post { 
+        always { 
+            junit 'jest-junit.xml'   
+            }
+        }
         stage('Unit tests') {
             steps {
                 sh 'yarn test'
@@ -21,5 +26,10 @@ pipeline {
                 sh 'yarn test:e2e'
             }
         }
+        post { 
+            always { 
+                junit 'cypress-junit.xml'   
+            }
+      }
     }
 }
