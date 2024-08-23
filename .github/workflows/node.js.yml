@@ -22,8 +22,18 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install -g yarn
-    - run: yarn install
-    - run: yarn test
-    - run: yarn build
-    - run: yarn test:e2e
+    - name: Install yarn
+      run: |
+        npm install -g yarn
+        yarn install
+    - name: Run unit tests
+      run: yarn testß
+    - name: Build
+      run: yarn build
+    - name: E2E tests
+      run: yarn test:e2e
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: always()
+      with:
+        files: reports/*.xml
